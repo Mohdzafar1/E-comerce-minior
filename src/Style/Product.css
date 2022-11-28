@@ -1,0 +1,12 @@
+#side-img{
+    width: 100%;
+    height: 60vh;
+}
+#sale-img{
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-size: cover;
+    background-position: top;
+    
+}

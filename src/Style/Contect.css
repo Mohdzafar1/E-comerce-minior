@@ -1,0 +1,12 @@
+#contact-icon{
+    width: 40%;
+    height: 55%;
+    border-radius: 50%;
+    box-shadow: 0.5px 0.5px 2px 2px yellow;
+}
+#contact-img{
+    width: 110%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}

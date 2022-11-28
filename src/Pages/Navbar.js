@@ -55,7 +55,7 @@ const Navbar = () => {
     
       <div>
       <span>
-      {user && user.email}
+      {user && user.emai}
       </span>
         <button onClick={handleLogOut} className='btn btn-light ms-2'>Log Out</button>
       

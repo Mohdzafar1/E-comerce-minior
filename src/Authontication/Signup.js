@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useUserAuth } from '../Context/UserAuthContext';
+import signup from "../Images/signup.gif"
 
 const Signup = () => {
    const[email,setEmail]=useState("");
@@ -42,6 +43,11 @@ const Signup = () => {
            <div  className='pb-5'>
               Already have an account ? <Link to="/">Login In</Link>
             </div>
+           </div>
+           <div className='col-lg-5'>
+               <figure>
+                 <img src={signup} alt="file" style={{width:"100%",height:"100%"}}/>
+               </figure>
            </div>
          </div>
       </div>

@@ -13,7 +13,7 @@ const FeatureProduct = (curElem) => {
          <NavLink to={`/singleproduct/${id}`}>
           <div className='container'>
             <div className='card'>
-               <div className='card-img-top'>
+               <div className='card-img-top text-center'>
                 <figure>
                   <img src={image}  alt="file" id="product-img"/>
                 </figure>

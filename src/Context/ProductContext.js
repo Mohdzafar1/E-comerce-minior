@@ -1,11 +1,14 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useReducer } from 'react'
 import reducer from "../Reducer/ProductReducer"
+import shoeData from '../Data/ShoeData';
 
 const AppProvider=createContext();
 
 
 const API="https://api.pujakaitem.com/api/products";
+
+
  
  const initialState={
    isLoading:false,
@@ -14,12 +17,16 @@ const API="https://api.pujakaitem.com/api/products";
    featureProducts:[],
    isSingleLoading:false,
    singleProduct:{},
+
+
+  
 }
 
 const ProductContext = ({children}) => {
 
 
   const [state,dispatch]=useReducer(reducer,initialState)
+
  
     const getProducts=async (url)=>{
       dispatch({type:"SET_LOADING"})
@@ -47,11 +54,13 @@ const ProductContext = ({children}) => {
           dispatch({type:"SET_SINGLE_ERROR"})
         }
        }
-
-   useEffect(()=>{
-    getProducts(API)
-   },[])
-
+      
+       
+       useEffect(()=>{
+        getProducts(API)
+       
+       },[])
+    
   return (
     <div>
      <AppProvider.Provider value={{...state , getSingleProduct,getProducts}}>

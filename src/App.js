@@ -15,6 +15,7 @@ import Login from "./Authontication/Login"
 import Signup from "./Authontication/Signup";
 import ProtectRoute from "./Authontication/ProtectRoute"
 import {UserAuthContextProvider} from "./Context/UserAuthContext" 
+import OtherData from "./Pages/OtherData"
 
 function App() {
      
@@ -35,6 +36,9 @@ function App() {
            }/>
             <Route path="/contact" element={<ProtectRoute><Contact/></ProtectRoute>}/>
             <Route path="/allproduct" element={<ProtectRoute> <AllProduct/></ProtectRoute>}/>
+            <Route path="/allproduct" element={<ProtectRoute> <OtherData/></ProtectRoute>}/>
+           
+            
             
             <Route path="/singleproduct/:id" element={<ProtectRoute> <SingleProduct/></ProtectRoute>}/>
             <Route path="/cart" element={<ProtectRoute> <Cart/></ProtectRoute>}/>

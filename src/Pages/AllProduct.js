@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useStoreData } from '../Context/ProductContext'
-
+import OtherData from "../Pages/OtherData"
 import FeatureProduct from './FeatureProduct';
 
 const AllProduct = () => {
@@ -13,7 +13,7 @@ const AllProduct = () => {
    
 
   const {products,isLoading} =useStoreData();
-      console.log(products)
+     
     if(isLoading){
       return <h3>product is load</h3>
     }
@@ -31,23 +31,24 @@ const AllProduct = () => {
 
           </div>
          <div className='row'>
-         {products.filter((val)=>{
+         {products.filter((val,price)=>{
           if(text===""){
             return val;
-          }else if(val.name.toLowerCase().startsWith(text.toLowerCase())) {
+          }else if((val.name.toLowerCase().startsWith(text.toLowerCase())) || (price.price.toLowerCase().startsWith(text.toLowerCase()))) {
             return val;
             }  
          }).map((curElem)=>{
           return(
             <>
               {/* <AllFeatureProduct key={curElem.id} {...curElem} /> */}
-             <div className='col-lg-4 py-3'>
+             <div className='col-lg-3 py-3'>
              <FeatureProduct  key={curElem.id} {...curElem}/>
              </div>
             </>
           )
          })}
          </div>
+         <OtherData/>
 
     </div>
   )

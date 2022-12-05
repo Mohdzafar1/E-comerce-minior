@@ -8,6 +8,9 @@ import cart from "../Images/cart1.gif"
 const Navbar = () => {
     const {user,logOut}=useUserAuth();
     const handleLogOut=async ()=>{
+      if(user.photoURL=" "){
+        <img src=""/>
+      }
       try{
                 await logOut();
       }catch(err){
@@ -40,6 +43,9 @@ const Navbar = () => {
           <Link className="nav-link active fw-bold" to="/allproduct">Products</Link>
         </li>
         <li className="nav-item">
+          <Link className="nav-link active fw-bold" to="/shoeproduct">Man Shoe</Link>
+        </li>
+        <li className="nav-item">
           <Link className="nav-link active fw-bold" to="/contact">Contact us</Link>
         </li>
       </ul>
@@ -54,10 +60,13 @@ const Navbar = () => {
     <div>
     
       <div>
-      <span>
-      {user && user.emai}
+      <span> 
+        
+      {<img src={user && user.photoURL}  id="profile-img"/>} 
       </span>
-        <button onClick={handleLogOut} className='btn btn-light ms-2'>Log Out</button>
+        <button onClick={handleLogOut} className='btn btn-light ms-2'
+      
+        >Log Out</button>
       
       </div>
     </div>
